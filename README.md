@@ -19,8 +19,11 @@ Simply run:
 
     $ pipsi install .
 
-
 # Usage
+
+First time you run the command, it will create a folder named "~/.cheater" and copy
+a basic customizable stylesheet to render your cheatsheets. Markdown files need to
+be placed under this directory, you could find some examples under the cheater/cheatsheets directory on this repository
 
 To use it:
 
