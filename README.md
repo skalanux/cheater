@@ -10,7 +10,7 @@ Cheater is a cheetsheet display app
 
 You need to have the webkit binding installed, on ubuntu:
 
- `` sudo apt-get install gir1.2-webkit2-3.0
+    $ sudo apt-get install gir1.2-webkit2-3.0
 
 If you don't use `pipsi`, you're missing out.
 Here are [installation instructions](https://github.com/mitsuhiko/pipsi#readme).
