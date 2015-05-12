@@ -67,3 +67,5 @@ def render_cheatsheets():
                 except:
                     print('Failed to render HTML file for {}...'.format(markdown_filename))
 
+if __name__=="__main__":
+    render_cheatsheets()
