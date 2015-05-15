@@ -25,6 +25,7 @@ import click
 
 def main():
     """Cheater is a cheetsheet display app"""
+    import ipdb; ipdb.set_trace()  # XXX BREAKPOINT
     render_cheatsheets()
     # Fixme: temporary imports, should be methods
     from cheater import app

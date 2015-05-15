@@ -7,7 +7,7 @@ dependencies = ['click', 'Jinja2>=2.7.3', 'Markdown>=2.5.2']
 
 setup(
     name='cheater',
-    version='0.1.0',
+    version='0.1.2',
     url='https://github.com/skalanux/cheater',
     license='GPLV3',
     author='Juan Manuel Schillaci',
@@ -24,12 +24,17 @@ setup(
             'cheater = cheater.cli:main',
         ],
     },
+     data_files=[
+             ('', [
+                         'cheater/cheatsheets/stylesheet.css',
+                         'cheater/cheatsheets/template.html',
+                     ]),],
     classifiers=[
         # As from http://pypi.python.org/pypi?%3Aaction=list_classifiers
         # 'Development Status :: 1 - Planning',
         # 'Development Status :: 2 - Pre-Alpha',
-        # 'Development Status :: 3 - Alpha',
-        'Development Status :: 4 - Beta',
+         'Development Status :: 3 - Alpha',
+        # 'Development Status :: 4 - Beta',
         # 'Development Status :: 5 - Production/Stable',
         # 'Development Status :: 6 - Mature',
         # 'Development Status :: 7 - Inactive',

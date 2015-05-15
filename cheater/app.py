@@ -27,13 +27,15 @@ from cheatsheets_discovery import (CHEATSHEET_KEY_FILE, CHEATSHEET_KEY_INDEX,
                                    get_cheatsheets)
 
 CHEATSHEETS = get_cheatsheets()
+FILE_PREFIX = 'file://'
 
 
 class MainWindow(Gtk.Window):
     def __init__(self):
         Gtk.Window.__init__(self, title="Cheater - cheatsheet discovery tool")
 
-        self.label = Gtk.Label(label="Cheater", angle=24, halign=Gtk.Align.START, valign=Gtk.Align.START)
+        self.label = Gtk.Label(label="Cheater", angle=24, halign=Gtk.Align.START,
+                               valign=Gtk.Align.START)
 
         self.set_border_width(10)
         self.set_default_size(400, 200)
@@ -64,7 +66,7 @@ class MainWindow(Gtk.Window):
         self.hb.pack_start(box)
 
         next_cheatsheet = CHEATSHEETS.next()
-        doc = "file://" + next_cheatsheet[CHEATSHEET_KEY_FILE]
+        doc = FILE_PREFIX + next_cheatsheet[CHEATSHEET_KEY_FILE]
         self.hb.props.title = next_cheatsheet[CHEATSHEET_KEY_INDEX]
         self.view = WebKit2.WebView()
         self.view.load_uri(doc)
@@ -72,13 +74,13 @@ class MainWindow(Gtk.Window):
 
     def on_btn_forward_clicked(self, widget):
         next_cheatsheet = CHEATSHEETS.next()
-        doc = "file://" + next_cheatsheet[CHEATSHEET_KEY_FILE]
+        doc = FILE_PREFIX + next_cheatsheet[CHEATSHEET_KEY_FILE]
         self.hb.props.title = next_cheatsheet[CHEATSHEET_KEY_INDEX]
         self.view.load_uri(doc)
 
     def on_btn_backwards_clicked(self, widget):
         next_cheatsheet = CHEATSHEETS.prev()
-        doc = "file://" + next_cheatsheet[CHEATSHEET_KEY_FILE]
+        doc = FILE_PREFIX + next_cheatsheet[CHEATSHEET_KEY_FILE]
         self.hb.props.title = next_cheatsheet[CHEATSHEET_KEY_INDEX]
         self.view.load_uri(doc)
 
